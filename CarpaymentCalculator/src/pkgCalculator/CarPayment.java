@@ -48,9 +48,9 @@ public class CarPayment {
 		}
 
 		public double MP() {
-			return (double)((TotalPrice-DP)*(1+IR/100)/LL);
+			return (double)(((TotalPrice-DP)*(IR/12))/(1-1/Math.pow(1+IR/12,LL)));
 		}
 		public double TI() {
-			return (double)
+			return (double)(MP()*LL-TotalPrice+DP);
 		}
 }
